@@ -1,0 +1,73 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+nav {
+  background-color: navy;
+}
+
+nav .brand-logo {
+  color: yellow;
+}
+
+main {
+  flex: 1 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.search {
+  text-align: center;
+}
+
+.getResults {
+  background-color: navy;
+}
+
+.page-footer {
+  background-color: blue;
+}
+
+.page-footer .footer-copyright {
+  background-color: navy;
+}
+
+.card {
+  border-radius: 25px;
+  background-color: blue;
+  height: 30vh;
+  border: 1px solid black;
+  box-shadow: 5px 5px 2px #888888;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+
+/*@media only screen and (max-width: 600px) {
+  .card {
+    border-radius: 25px;
+    background-color: blue;
+    width: 90vw;
+    height: 33vh;
+    border: 1px solid black;
+    box-shadow: 5px 5px 2px #888888;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+  }
+}*/

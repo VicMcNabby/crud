@@ -9,12 +9,32 @@
 </head>
 
 <body>
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo center">Movies Watched</a>
+      </div>
+    </nav>
+  </header>
   <main>
     <form>
-      <input class="search" type="text" size="20" value="" />
+      <input class="search" type="text" size="20" placeholder="Enter Movie ID" value="" />
       <button class="getResults waves-effect waves-light btn" type="submit">Search</button>
+      <p>
+        Leave blank to see all movies
+      </p>
     </form>
+    <div class="row">
+    </div>
   </main>
+  <footer class="page-footer">
+    <div class="footer-copyright">
+      <div class="container">
+        © 2017 Copyright VicMcNabby
+        <a class="grey-text text-lighten-4 right" href="index.html">Search Again</a>
+      </div>
+    </div>
+  </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
   <script src="main.js"></script>
