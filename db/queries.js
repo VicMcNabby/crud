@@ -15,5 +15,5 @@ module.exports = {
   },
   delete(id) {
     return knex('movies').where('id', id).del()
-  }
+  },
 }

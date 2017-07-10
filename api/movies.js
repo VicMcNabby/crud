@@ -5,13 +5,15 @@ const router = express.Router()
 const queries = require('../db/queries')
 
 function isValidId(req, res, next) {
-  if (!isNaN(req.params.id)) return next();
+  if (!isNaN(req.params.id)) {
+    return next();
+  }
   next(new Error('Invalid ID'))
 }
 
 function validMovie(movie) {
   const hasTitle = typeof movie.title == 'string' && movie.title.trim() != '';
-  const hasLead = typeof movie.lead == 'string' && movie.lead.trim() != '';
+  const hasLead = typeof movie.lead == 'string' && movie.lead.match(/([0-9])/g) == null && movie.lead.trim() != '';
   const hasRating = !isNaN(movie.rating)
   return hasTitle && hasLead && hasRating
 }
@@ -22,12 +24,12 @@ router.get('/', (req, res) => {
   })
 })
 
-router.get('/:id', isValidId, (req, res) => {
+router.get('/:id', isValidId, (req, res, next) => {
   queries.getOne(req.params.id).then(movie => {
     if (movie) {
       res.json(movie);
     } else {
-      next();
+      next(new Error('Invalid ID'));
     }
   })
 })
